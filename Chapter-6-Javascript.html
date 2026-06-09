@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fuel Calculator</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        padding: 20px;
+      }
+
+      .box {
+        width: 350px;
+        max-width: 100%;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        padding: 25px;
+        border-radius: 18px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        text-align: center;
+      }
+
+      .box h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #00ffcc;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      input::placeholder {
+        color: #bbb;
+      }
+
+      input:focus {
+        outline: 2px solid #00ffcc;
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(45deg, #00ffcc, #00c9a3);
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h2>⛽ Fuel Calculator</h2>
+
+      <!-- Input for price per litre -->
+      <input
+        id="price"
+        type="number"
+        value="1.72"
+        placeholder="Price per litre"
+      />
+
+      <!-- Input for litres -->
+      <input
+        id="litres"
+        type="number"
+        value="0"
+        placeholder="Litres purchased"
+      />
+
+      <!-- Button -->
+      <button onclick="calculate()">Calculate</button>
+
+      <!-- Result display -->
+      <p id="result">Total: £0.00</p>
+    </div>
+
+    <script>
+      function calculate() {
+        let price = document.getElementById("price").value;
+        let litres = document.getElementById("litres").value;
+
+        let total = price * litres;
+
+        document.getElementById("result").innerText =
+          "Total: £" + total.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Mario</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #fff6e5, #ffe2b8);
+      }
+
+      /* Navbar */
+      .menu {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+        padding: 15px 25px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: white;
+        background: #ff6b00;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .menu a:hover {
+        background: #e65c00;
+        transform: translateY(-3px);
+      }
+
+      /* Sections */
+      .box {
+        min-height: 100vh;
+        padding: 120px 50px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .box h2 {
+        font-size: 3rem;
+        color: #ff6b00;
+        margin-bottom: 20px;
+      }
+
+      .box p {
+        max-width: 700px;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      /* Different backgrounds */
+      #story-section {
+        background: #fff;
+      }
+
+      #characters-section {
+        background: #fdf4e7;
+      }
+
+      #review-section {
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="menu">
+      <a href="#story-section">Story</a>
+      <a href="#characters-section">Characters</a>
+      <a href="#review-section">Review</a>
+    </nav>
+
+    <!-- Story -->
+    <section id="story-section" class="box">
+      <h2>📖 Story</h2>
+      <p>
+        Mario goes on exciting adventures to save Princess Peach from Bowser.
+        Along the way he travels through different worlds, defeats enemies,
+        collects coins, and gains special powers.
+      </p>
+    </section>
+
+    <!-- Characters -->
+    <section id="characters-section" class="box">
+      <h2>👥 Characters</h2>
+      <p>
+        The main characters include Mario, Luigi, Princess Peach, and Bowser.
+        Each character has a unique personality and role in the Mario universe.
+      </p>
+    </section>
+
+    <!-- Review -->
+    <section id="review-section" class="box">
+      <h2>⭐ Review</h2>
+      <p>
+        Super Mario is one of the most successful video game franchises ever.
+        Its fun gameplay, colorful worlds, and memorable characters make it a
+        timeless classic enjoyed by millions of players.
+      </p>
+    </section>
+  </body>
+</html>
