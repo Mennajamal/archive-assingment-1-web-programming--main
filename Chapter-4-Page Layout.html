@@ -1,197 +1,179 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digi Fest 2022</title>
 
-    <title>Neon Code Festival</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+body{
+    background:#efefef;
+}
 
-      html {
-        scroll-behavior: smooth;
-      }
+/* Header */
+header{
+    background:#170027;
+    color:white;
+    padding:20px 50px;
+}
 
-      body {
-        font-family: Arial, sans-serif;
-        background: radial-gradient(circle at top, #1a1a3a, #050510);
-        color: #fff;
-      }
+header h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
 
-      /* HEADER */
-      header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(11, 11, 42, 0.8);
-        backdrop-filter: blur(10px);
-        padding: 15px 20px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-      }
+nav{
+    display:flex;
+    gap:20px;
+}
 
-      header h1 {
-        text-align: center;
-        margin-bottom: 10px;
-        color: #00ffcc;
-        letter-spacing: 2px;
-        font-size: 22px;
-      }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-      nav {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
+nav a:hover{
+    text-decoration:underline;
+}
 
-      nav a {
-        color: #00ffcc;
-        text-decoration: none;
-        padding: 8px 15px;
-        border-radius: 8px;
-        transition: 0.3s;
-        border: 1px solid transparent;
-      }
+/* Main Section */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+}
 
-      nav a:hover {
-        background: rgba(0, 255, 204, 0.1);
-        border: 1px solid #00ffcc;
-        transform: translateY(-2px);
-      }
+.content{
+    flex:2;
+}
 
-      /* FULL SCREEN SECTIONS */
-      section {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 80px; /* عشان الهيدر */
-      }
+.content h2{
+    margin-bottom:15px;
+    font-size:30px;
+}
 
-      /* CARD */
-      .card {
-        width: 900px;
-        max-width: 95%;
-        background: rgba(28, 28, 58, 0.6);
-        backdrop-filter: blur(12px);
-        padding: 40px;
-        border-radius: 18px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(0, 255, 204, 0.2);
-        transition: 0.3s;
-        text-align: center;
-      }
+.content p{
+    line-height:1.8;
+    margin-bottom:20px;
+    color:#333;
+}
 
-      .card:hover {
-        transform: translateY(-5px);
-        border: 1px solid #00ffcc;
-      }
+.content img{
+    width:100%;
+    border-radius:8px;
+    display:block;
+}
 
-      .card h2 {
-        color: #00ffcc;
-        margin-bottom: 15px;
-        font-size: 32px;
-      }
+/* Sidebar */
+.sidebar{
+    flex:1;
+    background:#172f74;
+    color:white;
+    padding:20px;
+}
 
-      .card p {
-        line-height: 1.8;
-        color: #ddd;
-      }
+.sidebar h2{
+    margin-bottom:20px;
+}
 
-      /* IMAGES */
-      .images {
-        margin-top: 20px;
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+.sidebar ul{
+    margin-bottom:20px;
+    padding-left:20px;
+}
 
-      .images img {
-        width: 140px;
-        height: 140px;
-        object-fit: cover;
-        border-radius: 12px;
-        border: 2px solid #00ffcc;
-        box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
-        transition: 0.3s;
-      }
+.sidebar li{
+    margin-bottom:10px;
+}
 
-      .images img:hover {
-        transform: scale(1.05);
-      }
+.image-box{
+    display:flex;
+    gap:10px;
+}
 
-      /* FOOTER */
-      footer {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgba(11, 11, 42, 0.9);
-        color: #00ffcc;
-        font-size: 18px;
-      }
-    </style>
-  </head>
+.image-box img{
+    width:50%;
+    height:150px;
+    object-fit:cover;
+}
 
-  <body>
-    <!-- HEADER -->
-    <header>
-      <h1>Neon Code Festival</h1>
+/* Footer */
+footer{
+    background:#8f27ff;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+</style>
+</head>
 
-      <nav>
-        <a href="#welcome">Welcome</a>
-        <a href="#events">Events</a>
-        <a href="#lineup">Line Up</a>
-      </nav>
-    </header>
+<body>
 
-    <!-- WELCOME -->
-    <section id="welcome">
-      <div class="card">
+<header>
+    <h1>DIGI FEST 2022</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">What's On</a>
+        <a href="#">Contact</a>
+        <a href="#">Tickets</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="content">
         <h2>Welcome</h2>
-        <p>
-          Neon Code Festival is a digital celebration of creativity, coding, and
-          future technology. Join developers, designers, and creators in a
-          glowing tech-inspired experience.
-        </p>
-      </div>
-    </section>
 
-    <!-- EVENTS -->
-    <section id="events">
-      <div class="card">
-        <h2>Events</h2>
         <p>
-          Expect live coding, interactive workshops, and talks about AI, web
-          development, and game design.
+            Digi Fest is a celebration of digital and technology in the city.
+            Come and find out about the latest collaborations happening in this
+            innovative city. The programme is packed with educational and
+            inspirational events for everyone.
         </p>
-      </div>
-    </section>
 
-    <!-- LINE UP -->
-    <section id="lineup">
-      <div class="card">
+        <img
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200"
+            alt="Programming">
+    </div>
+
+    <aside class="sidebar">
         <h2>Line Up</h2>
-        <p>
-          Featuring speakers and creators from around the world sharing their
-          latest innovations.
-        </p>
 
-        <div class="images">
-          <img src="./img/S500929512_1.webp" alt="Speaker 1" />
-          <img src="./img/75519303_xxl.avif" alt="Speaker 2" />
+        <ul>
+            <li>- Introduction to HTML and CSS</li>
+            <li>- Links and Images</li>
+            <li>- Page Layout</li>
+        </ul>
+
+        <div class="image-box">
+            <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500"
+                alt="Technology">
+
+            <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500"
+                alt="Coding">
         </div>
-      </div>
-    </section>
+    </aside>
 
-    <!-- FOOTER -->
-    <footer>© Neon Code Festival 2026</footer>
-  </body>
+</div>
+
+<footer>
+    © 2022 DigiFest Ltd.
+</footer>
+
+</body>
 </html>
